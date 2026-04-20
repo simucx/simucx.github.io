@@ -1,0 +1,179 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segera Hadir | Inovasi Masa Depan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timer-card {
+            min-width: 70px;
+        }
+        
+        @media (min-width: 640px) {
+            .timer-card {
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-200 flex flex-col items-center justify-center p-6">
+
+    <!-- Ornamen Latar Belakang -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 blur-[120px] rounded-full"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 blur-[120px] rounded-full"></div>
+
+    <main class="relative z-10 w-full max-w-4xl text-center">
+        <!-- Logo -->
+        <div class="mb-12 flex justify-center animate-float">
+            <div class="p-3 bg-indigo-500/20 rounded-2xl border border-indigo-500/30">
+                <i data-lucide="rocket" class="w-10 h-10 text-indigo-400"></i>
+            </div>
+        </div>
+
+        <!-- Konten Utama -->
+        <h1 class="text-4xl md:text-7xl font-bold mb-6 tracking-tight">
+            Sesuatu yang <span class="gradient-text">Luar Biasa</span> Sedang Disiapkan
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+            Kami sedang membangun platform masa depan untuk membantu Anda mencapai potensi maksimal. Daftarkan email Anda untuk menjadi yang pertama tahu saat kami meluncur.
+        </p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="flex flex-wrap justify-center gap-4 mb-16">
+            <div class="glass p-4 md:p-6 rounded-2xl timer-card">
+                <span id="days" class="block text-3xl md:text-5xl font-bold text-white">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-slate-500 mt-1">Hari</span>
+            </div>
+            <div class="glass p-4 md:p-6 rounded-2xl timer-card">
+                <span id="hours" class="block text-3xl md:text-5xl font-bold text-white">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-slate-500 mt-1">Jam</span>
+            </div>
+            <div class="glass p-4 md:p-6 rounded-2xl timer-card">
+                <span id="minutes" class="block text-3xl md:text-5xl font-bold text-white">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-slate-500 mt-1">Menit</span>
+            </div>
+            <div class="glass p-4 md:p-6 rounded-2xl timer-card">
+                <span id="seconds" class="block text-3xl md:text-5xl font-bold text-white">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-slate-500 mt-1">Detik</span>
+            </div>
+        </div>
+
+        <!-- Form Subscription -->
+        <form id="subscribeForm" class="max-w-md mx-auto mb-16 px-4">
+            <div class="flex flex-col sm:flex-row gap-3 p-2 glass rounded-2xl">
+                <input type="email" required placeholder="Masukkan alamat email Anda" 
+                    class="bg-transparent border-none focus:ring-0 px-4 py-3 w-full text-slate-200 placeholder-slate-500 outline-none">
+                <button type="submit" 
+                    class="bg-indigo-600 hover:bg-indigo-500 transition-all text-white font-semibold px-8 py-3 rounded-xl shadow-lg shadow-indigo-600/20 active:scale-95">
+                    Beritahu Saya
+                </button>
+            </div>
+            <p id="responseMessage" class="mt-4 text-sm text-emerald-400 hidden">Terima kasih! Kami akan segera menghubungi Anda.</p>
+        </form>
+
+        <!-- Social Links -->
+        <div class="flex justify-center gap-6">
+            <a href="#" class="text-slate-500 hover:text-indigo-400 transition-colors"><i data-lucide="instagram"></i></a>
+            <a href="#" class="text-slate-500 hover:text-indigo-400 transition-colors"><i data-lucide="twitter"></i></a>
+            <a href="#" class="text-slate-500 hover:text-indigo-400 transition-colors"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="text-slate-500 hover:text-indigo-400 transition-colors"><i data-lucide="github"></i></a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-slate-600 text-sm">
+        &copy; 2024 NamaBrand. Hak Cipta Dilindungi.
+    </footer>
+
+    <script>
+        // Inisialisasi Ikon Lucide
+        lucide.createIcons();
+
+        // Logika Countdown
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 30); // Target: 30 hari dari sekarang
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = d.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById('countdown').innerHTML = "<p class='text-2xl font-bold'>Kami Sudah Meluncur!</p>";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Penanganan Form
+        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const msg = document.getElementById('responseMessage');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Tunggu...</span>';
+            lucide.createIcons();
+
+            // Simulasi API call
+            setTimeout(() => {
+                this.reset();
+                btn.disabled = false;
+                btn.innerText = 'Beritahu Saya';
+                msg.classList.remove('hidden');
+                setTimeout(() => msg.classList.add('hidden'), 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
+
+```
